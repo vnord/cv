@@ -13,8 +13,10 @@
 \usepackage{titlesec}
 \usepackage[margin=1in]{geometry}
 \usepackage{titling}
-\newfontfamily\cfont{Noto Sans CJK SC}
 \usepackage{libertine}
+
+\usepackage{fontspec}
+\usepackage{fontawesome}
 
 % Macro to allow image links in XeLaTeX
 \ifxetex
@@ -37,7 +39,7 @@
 \renewcommand{\href}[3][blue]{\oldhref{#2}{\color{#1}{#3}}}
 
 % Your name goes here:
-\author{Luke Smith}
+\author{Ari von Nordenskjöld}
 
 % Update date set to last compile:
 \date{\today}
@@ -46,13 +48,13 @@
 \renewcommand{\maketitle}{
 	\hspace{.25\textwidth}
 	\begin{minipage}[t]{.5\textwidth}
-\par{\centering{\Huge  \bfseries{\theauthor}}\par}
+\par{\centering{\LARGE  \bfseries{\theauthor}}\par}
 	\end{minipage}
 	\begin{minipage}[t]{.25\textwidth}
 {\footnotesize\hfill{}\color{gray}
 \hfill{}Download this document:
 
-\hfill{}\href[gray]{https://LukeSmith.xyz/cv.pdf}{https://LukeSmith.xyz/cv.pdf \pdf}
+\hfill{}\href[gray]{http://vnord.net/cv.pdf}{http://vnord.net/cv.pdf \faDownload}
 
 \hfill{}(Last updated \thedate.)
 }
@@ -96,6 +98,7 @@
 \newcommand{\uga}{University of Georgia}
 \newcommand{\gsu}{Georgia State University}
 \newcommand{\ua}{University of Arizona}
+\newcommand{\ch}{Chalmers University of Technology}
 
 % Macros for people's names including link to their websites
 \newcommand{\tgb}{\href{http://coglanglab.com}{Tom Bever}}
@@ -135,49 +138,78 @@
 
 \section{Basic Info}
 
-\begin{minipage}[t]{.5\linewidth}
-\begin{tabular}{rp{.75\linewidth}}
+\begin{minipage}[t]{.4\linewidth}
+\begin{tabular}{cp{.75\linewidth}}
 	\baselineskip=20pt
-	\email{} :     & \href{mailto:luke@lukesmith.xyz}{luke@lukesmith.xyz}\\
-	\www{} : &\href{https://www.lukesmith.xyz}{https://lukesmith.xyz}
+    \faEnvelope & \href{mailto:ari@vnord.net}{ari@vnord.net}\\
+    \faGlobe & \href{http://vnord.net}{http://vnord.net}
 \end{tabular}
 \end{minipage}
-\begin{minipage}[t]{.5\linewidth}
+\begin{minipage}[t]{.4\linewidth}
 \begin{tabular}{rl}
-	\gh{} : & \href{http://github.com/LukeSmithxyz}{github.com/LukeSmithxyz}\\
-	\yt{} : &\href{http://youtube.com/c/LukeSmithxyz}{youtube.com/c/LukeSmithxyz}
+	\faGithub & \href{http://github.com/vnord}{github.com/vnord} \\
+    \faPhone & +46703716960
+	% \yt{} : &\href{http://youtube.com/c/LukeSmithxyz}{youtube.com/c/LukeSmithxyz}
+\end{tabular}
+\end{minipage}
+\begin{minipage}[t]{\linewidth}
+\begin{tabular}{rl}
+    & Älvsborgsplan 6 \\
+    & 414 71 Göteborg
+	% \faGithub & \href{http://github.com/vnord}{github.com/vnord} \\
+    % \faPhone & +46703716960
+	% \yt{} : &\href{http://youtube.com/c/LukeSmithxyz}{youtube.com/c/LukeSmithxyz}
 \end{tabular}
 \end{minipage}
 
 \begin{itemize}
-\item Maintainer and developer of an Arch Linux-based metadistribution at \href{https://larbs.xyz}{https://larbs.xyz \www}.
-\item Doctoral student in linguistics at the \href{https://linguistics.arizona.edu}{University of Arizona \www}, focusing mostly on deriving linguistic traits and tendencies from non-linguistic externals and theoretical reform.
+\item Fourth-year student at the Chalmers Computer Science and Engineering programme
+% \item Maintainer and developer of an Arch Linux-based metadistribution at \href{https://larbs.xyz}{https://larbs.xyz \www}.
+% \item Doctoral student in linguistics at the \href{https://linguistics.arizona.edu}{University of Arizona \www}, focusing mostly on deriving linguistic traits and tendencies from non-linguistic externals and theoretical reform.
 
-For more information, go here: \href{https://lukesmith.xyz/linguistics}{https://lukesmith.xyz/linguistics \www}.
-\item Since late 2016, I run a \href{https://youtube.com/c/lukesmithxyz}{YouTube channel \yt} mostly on technology tutorials and Linux configuration and system management.
+% For more information, go here: \href{https://lukesmith.xyz/linguistics}{https://lukesmith.xyz/linguistics \www}.
+% \item Since late 2016, I run a \href{https://youtube.com/c/lukesmithxyz}{YouTube channel \yt} mostly on technology tutorials and Linux configuration and system management.
 \end{itemize}
 
-\section{Institutions}
+\section{Education}
 
-\entry{2015--2018}
-	{Ph.D. in Linguistics}
-	{\ua, Tucson}
-	{Focusing on biolinguistics, syntax and human language technology. Advisors: \tgb, \mike.}
+\entry{2018-2020}
+    {MSc. in Computer Science - Algorithms, Languages and Logic}
+    {\ch, Gothenburg}
+    {}
 
-\entry{2013--2015}
-	{M.A. in Linguistics}
-	{\uga, Athens, Georgia}
-	{Major in Syntax; minor in \textbf{Romance Languages}. Thesis: \textit{External Possession and the Undisentanglability of Syntax and Semantics} \href{https://lukesmith.xyz/thesis.pdf}{\pdf}. Advisor: \vera.}
+\entry{2015-2018}
+    {BSc. in Computer Engineering}
+    {\ch, Gothenburg}
+    {\\\textit{Thesis title:} Port Call Synchronization
+     \\\textit{Thesis company:} RISE Viktoria AB, Gothenburg
+     \\\textit{Thesis subject:} Automating and optimising the generation of recommended times of arrival for ships coming in to
+    ports by using data analysis and machine learning}
 
-\entry{2012}
-	{Exchange Program, Zhèngzhōu University (\cfont{郑州大学})}
-	{Zhèngzhōu, China}
-	{Studying Chinese history.}
+\entry{2014}
+    {Foundation Year}
+    {\ch, Gothenburg}
+    {\\Subjects: Calculus, Physics, and Chemistry}
 
-\entry{2009--2012}
-	{B.A. in International Economics and Modern Languages}
-	{Andrew Young School of Policy Studies, \gsu, Atlanta}
-	{Specializations in Spanish and Chinese. Certificates in Economic History and International Trade.}
+% \entry{2015--2018}
+% 	{Ph.D. in Linguistics}
+% 	{\ua, Tucson}
+% 	{Focusing on biolinguistics, syntax and human language technology. Advisors: \tgb, \mike.}
+
+% \entry{2013--2015}
+% 	{M.A. in Linguistics}
+% 	{\uga, Athens, Georgia}
+% 	{Major in Syntax; minor in \textbf{Romance Languages}. Thesis: \textit{External Possession and the Undisentanglability of Syntax and Semantics} \href{https://lukesmith.xyz/thesis.pdf}{\pdf}. Advisor: \vera.}
+
+% \entry{2012}
+% 	{Exchange Program, Zhèngzhōu University (\cfont{郑州大学})}
+% 	{Zhèngzhōu, China}
+% 	{Studying Chinese history.}
+
+% \entry{2009--2012}
+% 	{B.A. in International Economics and Modern Languages}
+% 	{Andrew Young School of Policy Studies, \gsu, Atlanta}
+% 	{Specializations in Spanish and Chinese. Certificates in Economic History and International Trade.}
 
 \section{Classes Taught}
 
