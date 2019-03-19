@@ -3,7 +3,6 @@
 		%twocolumn,
 		10pt]{article}
 \usepackage[utf8]{inputenc}
-\usepackage{metalogo}
 \usepackage{xifthen}
 \usepackage[colorlinks=true,urlcolor=Blue]{hyperref}
 \usepackage{graphicx}
@@ -18,21 +17,6 @@
 \usepackage{fontspec}
 \usepackage{fontawesome}
 
-% Macro to allow image links in XeLaTeX
-\ifxetex
-  \usepackage{letltxmacro}
-  \setlength{\XeTeXLinkMargin}{1pt}
-  \LetLtxMacro\SavedIncludeGraphics\includegraphics
-  \def\includegraphics#1#{% #1 catches optional stuff (star/opt. arg.)
-    \IncludeGraphicsAux{#1}%
-  }%
-  \newcommand*{\IncludeGraphicsAux}[2]{%
-    \XeTeXLinkBox{%
-      \SavedIncludeGraphics#1{#2}%
-    }%
-  }%
-\fi
-%%%%%%%
 
 % Bold contents of a link
 \let\oldhref\href
@@ -54,7 +38,7 @@
 {\footnotesize\hfill{}\color{gray}
 \hfill{}Download this document:
 
-\hfill{}\href[gray]{http://vnord.net/cv.pdf}{http://vnord.net/cv.pdf \faDownload}
+\hfill{}\href[gray]{http://vnord.net/cv.pdf}{http://vnord.net/cv.pdf \faDownload }
 
 \hfill{}(Last updated \thedate.)
 }
@@ -156,14 +140,6 @@
 \end{minipage}
 
 \vspace{0.25cm}
-% \begin{itemize}
-% \item Fourth-year Computer Science and Engineering student
-% \item Maintainer and developer of an Arch Linux-based metadistribution at \href{https://larbs.xyz}{https://larbs.xyz \www}.
-% \item Doctoral student in linguistics at the \href{https://linguistics.arizona.edu}{University of Arizona \www}, focusing mostly on deriving linguistic traits and tendencies from non-linguistic externals and theoretical reform.
-
-% For more information, go here: \href{https://lukesmith.xyz/linguistics}{https://lukesmith.xyz/linguistics \www}.
-% \item Since late 2016, I run a \href{https://youtube.com/c/lukesmithxyz}{YouTube channel \yt} mostly on technology tutorials and Linux configuration and system management.
-% \end{itemize}
 
 \section{Education}
 
@@ -171,14 +147,15 @@
     {MSc. in Computer Science - Algorithms, Languages and Logic}
     {\ch, Gothenburg}
     {\\Transcript from March 19, 2019 available
-    at \href[gray]{http://vnord.net/transcript.pdf}{http://vnord.net/transcript.pdf \faDownload}}
+    at \href[gray]{http://vnord.net/transcript.pdf}{http://vnord.net/transcript.pdf \faDownload }}
 
 \entry{2015-2018}
     {BSc. in Computer Engineering}
     {\ch, Gothenburg}
     {\\\textit{Thesis title:} Port Call Synchronization \textit{Thesis company:} RISE Viktoria AB, Gothenburg
      \\\textit{Thesis subject:} Automating and optimising the generation of recommended times of arrival for ships coming in to
-    ports by using data analysis and machine learning}
+    ports by using data analysis and machine 
+    learning \textit{\href[gray]{https://publications.lib.chalmers.se/records/fulltext/256128/256128.pdf}{\\Thesis available at https://publications.lib.chalmers.se/records/fulltext/256128/256128.pdf \faDownload }}}
 
 \entry{2014}
     {Foundation Year}
@@ -224,8 +201,8 @@
 
 \entry{Summer 2015}
     {WWOOF Volunteer}
-    {Alpes-Mairitmes, France}
-    {\\Helped out at a farm, milked cows, and made cheese}
+    {Alpes-Maritimes, France}
+    {\\Helped out at an organic farm, milked cows, and made cheese}
 
 \section{Tools I Use}
 
