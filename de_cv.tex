@@ -1,0 +1,256 @@
+% xelatex
+\documentclass[letterpaper,
+		%twocolumn,
+		10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{xifthen}
+\usepackage[colorlinks=true,urlcolor=Blue]{hyperref}
+\usepackage{graphicx}
+\usepackage{fontspec}
+\usepackage[T1]{fontenc}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{titlesec}
+\usepackage[margin=1in]{geometry}
+\usepackage{titling}
+\usepackage{libertine}
+\usepackage{xcolor}
+
+\usepackage{fontspec}
+\usepackage{fontawesome}
+
+
+% Bold contents of a link
+\let\oldhref\href
+\renewcommand{\href}[3][blue]{\oldhref{#2}{\color{#1}{#3}}}
+
+% Your name goes here:
+\author{Ari von Nordenskjöld}
+
+% Update date set to last compile:
+\date{\today}
+
+% Custom title command.
+\renewcommand{\maketitle}{
+	\hspace{.25\textwidth}
+	\begin{minipage}[t]{.5\textwidth}
+\par{\centering{\LARGE  \bfseries{\theauthor}}\par}
+	\end{minipage}
+	\begin{minipage}[t]{.25\textwidth}
+{\footnotesize\hfill{}\color{gray}
+\hfill{}Dieses Dokument herunterladen:
+
+\hfill{}\href[gray]{https://vnord.net/de\_cv.pdf}{https://vnord.net/de\_cv.pdf \faDownload }
+
+\hfill{}(Aktualisiert: \thedate.)
+}
+	\end{minipage}
+}
+
+
+
+% Setting the font I want:
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{sqrcaps}
+
+% Making the \entry command
+\newcommand{\entry}[4]{
+\ifthenelse{\isempty{#3}}
+{\slimentry{#1}{#2}}{
+
+\begin{minipage}[t]{.15\linewidth}
+\hfill \textsc{#1}
+\end{minipage}
+\hfill\vline\hfill
+\begin{minipage}[t]{.80\linewidth}
+{\bf#2}\\\textit{#3} \small{#4}
+\end{minipage}\\
+\vspace{.2cm}
+}}
+
+\newcommand{\slimentry}[2]{
+\begin{minipage}[t]{.15\linewidth}
+\hfill \textsc{#1}
+\end{minipage}
+\hfill\vline\hfill
+\begin{minipage}[t]{.80\linewidth}
+#2
+\end{minipage}\\
+\vspace{.25cm}
+}
+
+\newcommand{\sentry}[2]{
+\begin{minipage}[t]{.15\linewidth}
+\hfill \textsc{#1}
+\end{minipage}
+\hfill\vline\hfill
+\begin{minipage}[t]{.80\linewidth}
+#2
+\end{minipage}\\
+\vspace{-.15cm}
+}% end \entry command definition
+
+% Some macros because I'm lazy:
+\newcommand{\ch}{Technische Hochschule Chalmers}
+
+% Macros for people's names including link to their websites
+% \newcommand{\tgb}{\href{http://coglanglab.com}{Tom Bever}}
+
+\let\lineheight\baselineskip
+
+% Link images
+% \newcommand{\pdf}{\includegraphics[height=.85em]{cv/pdf.png}}
+% \newcommand{\yt}{\includegraphics[height=.85em]{cv/yt.png}}
+% \newcommand{\gh}{\includegraphics[height=.85em]{cv/gh.png}}
+% \newcommand{\www}{\includegraphics[height=.85em]{cv/www.png}}
+% \newcommand{\email}{\includegraphics[height=.85em]{cv/email.png}}
+
+% Custom section spacing and formatting
+\titleformat{\part}{\Huge\scshape\filcenter}{}{1em}{}
+\titleformat{\section}{\Large\bf\raggedright}{}{1em}{}[{\titlerule[2pt]}]
+\titlespacing{\section}{0pt}{3pt}{7pt}
+\titleformat{\subsection}{\large\bfseries\centering}{}{0em}{\underline}%[\rule{3cm}{.2pt}]
+\titlespacing{\subsection}{0pt}{7pt}{7pt}
+
+% No indentation
+\setlength{\parindent}{0in}
+
+\begin{document}
+
+\maketitle
+
+\section{Persönliche Angaben}
+
+\begin{minipage}[t]{.4\linewidth}
+\begin{tabular}{cp{.75\linewidth}}
+	\baselineskip=20pt
+    \faEnvelope & \href{mailto:ari@vnord.net}{ari@vnord.net}\\
+    \faGlobe & \href{https://vnord.net}{https://vnord.net}
+\end{tabular}
+\end{minipage}
+\begin{minipage}[t]{.4\linewidth}
+\begin{tabular}{rl}
+	\faGithub & \href{https://github.com/vnord}{github.com/vnord} \\
+    \faPhone & +41 997 59 64
+\end{tabular}
+\end{minipage}
+\begin{minipage}[t]{\linewidth}
+\begin{tabular}{rl}
+    & Baurstrasse 29 \\
+    & 8008 Zürich
+\end{tabular}
+\end{minipage}
+
+\vspace{0.25cm}
+
+\section{Bildung \hfill \href[gray]{https://vnord.net/transcript.pdf}{\textit{\small Zeugnis herunterladen: vnord.net/transcript.pdf} \faDownload}}
+
+\entry{2018-2020}
+    {MSc. in Computer Science - Algorithms, Languages and Logic}
+    {\ch, Göteborg}
+    {\\\textit{Titel der Abschlussarbeit:} Ray Tracing for Sensor Simulation using Parallel Functional Programming \\\textit{Gesellschaft:} Volvo Cars, Göteborg
+     \\\textit{Thema:} Verwendete die parallele funktionale Programmiersprache Futhark, um einen physikalisch korrekten Raytracer für Kamera und LIDAR zu entwickeln
+     \\\textit{Betreuer der Arbeit:} John Hughes \& Mary Sheeran (Chalmers), Göksan Isil (Volvo Cars)
+     \\\textit{\href[gray]{https://vnord.net/msc\_thesis.pdf}{Abschlussarbeit herunterladen: vnord.net/msc\_thesis.pdf \faDownload }} }
+
+\entry{2015-2018}
+    {BSc. in Computer Engineering}
+    {\ch, Göteborg}
+    {\\\textit{Titel der Abschlussarbeit:} Port Call Synchronization \textit{Gesellschaft:} RISE Viktoria AB, Göteborg
+     \\\textit{Thema:} Verwendete Datenanalyse und maschinelles Lernen, um die Generierung der empfohlenen Ankunftszeiten für Schiffe, die in Häfen ankommen, zu automatisieren und zu optimieren
+     \\\textit{\href[gray]{https://publications.lib.chalmers.se/records/fulltext/256128/256128.pdf}{Abschlussarbeit herunterladen: https://publications.lib.chalmers.se/records/fulltext/256128/256128.pdf \faDownload }} }
+
+\entry{2014}
+    {Basisjahr}
+    {\ch, Göteborg}
+    {\\\textit{Kursfächer:} Analysis, Physik und Chemie }
+
+\section{Erfahrung}
+
+\entry{Sommer 2019}
+    {Volvo Engineering Student Concept}
+    {Volvo Cars, Göteborg}
+    {\\
+    Arbeitete mit einem Test- und Verifikationsteam (Virtual Car). Hauptsächlich an der Änderung eines Frameworks für Integration von Hardware-Code in ein virtuelles Setup, damit zusätzliche Hardwareinheiten simuliert werden könnte.
+    \\\textit{Kompetenzen:} Linux, AUTOSAR, build systems, Matlab, Python}
+    
+
+\entry{Sommer 2018}
+    {Back-end Developer}
+    {Rise Viktoria AB, Göteborg}
+    {\\
+    Entwicklung verschiedener Back-End-Funktionen für die PortCDM-Plattform für den Informationsaustausch, einschließlich eines umfangreichen Benachrichtigungssystems.
+    \\\textit{Kompetenzen:} Java EE, WildFly Application Server, Linux}
+
+\entry{2017-2018}
+    {Projektmanager für Initiative zur Unterstützung besonders talentierter Kinder}
+    {Der gemeinnützige Verein Intize, Göteborg}
+    {\\Rekrutierte Mentoren sowie besonders talentierte Kinder und koordinierte Mentorengruppen}
+
+\entry{Herbst 2016}
+    {Supplemental Instruction Leader}
+    {\ch, Göteborg}
+    {\\Coach für Gruppen von Studenten, die einen Kurs in Diskreter Mathematik belegen}
+
+\entry{Herbst 2016}
+    {Mentor for Individual Student}
+    {\ch, Göteborg}
+    {\\Unterstützt einen Studenten mit besonderen Bedürfnissen bei der Durchführung seines Studiums}
+
+
+\newpage
+
+\section{Freiwilligenarbeit}
+
+\entry{2017 - 2018}
+    {Mentor für besonders talentierte Kinder}
+    {Der gemeinnützige Verein Intize, Göteborg}
+    {\\Ich habe Mathe für eine Gruppe von drei besonders talentierten Kindern lustiger und herausfordernder gemacht}
+
+\entry{2016 - 2017}
+    {Mentor für Gymnasiasten}
+    {Der gemeinnützige Verein Intize, Göteborg}
+    {\\Hat einer Gruppe von fünf Gymnasiasten jede Woche zwei Stunden lang bei ihren Mathe-Hausaufgaben geholfen}
+
+\entry{Sommer 2015}
+    {WWOOF Freiwilliger}
+    {Alpes-Maritimes, France}
+    {\\Hat auf einem Bio-Bauernhof geholfen, Kühe gemolken und Käse gemacht}
+
+\section{Technische Werkzeuge}
+
+\subsection{Arbeitsablauf}
+
+Ich verwende nur GNU/Linux-basierte Betriebssysteme -- hauptsächlich Arch Linux -- auf meinen persönlichen Systemen.
+Ich bin aber auch mit anderen Betriebssystemen wie MacOS und Windows vertraut.
+
+Normalerweise verwende ich einen tiling window manager (\textbf{bspwm}) und programmiere und bearbeite Dateien
+mit \textbf{Neovim}.
+Ich setze meine Dokumente (wie dieses) in \LaTeX.
+
+
+\subsection{Programmiersprachen}
+
+Ich glaube daran, die richtige Sprache für den Job zu verwenden, und freue mich sehr, neue Sprachen und Paradigmen zu lernen. Ich verwende gerne Prinzipien der funktionalen Programmierung, unabhängig von der Programmiersprache. Die Sprachen, mit denen ich am meisten Erfahrung habe, sind \textbf{Haskell}, \textbf{Python}, \textbf{C} und \textbf{Java}. Ich habe auch erfahrung mit
+\textbf{Erlang}, \textbf{Futhark}, \textbf{Agda}, \textbf{Idris}, \textbf{Clojure}, \textbf{C++},
+\textbf{Rust}, \textbf{JavaScript}, \textbf{PureScript} und einige Assemblersprachen.
+Ich kann relationale Datenbanken mit Datenbankverwaltungssystemen wie \textbf{PostgreSQL}
+und \textbf{MySQL} verwenden und entwerfen.
+Während meines studiums habe ich auch benutzt \textbf{VHDL}, \textbf{MatLab} und \textbf{R}.
+
+\section{Menschliche Sprachen}
+
+\sentry{Englisch}{Fließend in Schreiben und Sprechen auf akademischem Niveau}
+
+\sentry{Schwedisch}{Muttersprache}
+
+\sentry{Deutsch}{Ungefähr B2}
+
+\sentry{Französisch}{Ungefähr B2}
+
+
+\section{Referenzen}
+    
+Empfehlungsschreiben von Chalmers sowie von Intize sind auf Anfrage erhältlich. Empfehlungen ehemaliger Kollegen sind auf Anfrage ebenfalls erhältlich.
+
+
+\end{document}
