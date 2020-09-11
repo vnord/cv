@@ -1,5 +1,4 @@
-cv.aux
-cv.log
-cv.out
-missfont.log
-cv.pdf
+*.aux
+*.log
+*.out
+*.pdf
